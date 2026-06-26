@@ -12,4 +12,6 @@ class Settings(BaseSettings):
     celery_broker_url: str = "redis://localhost:6379/1"
     celery_backend_url: str = "redis://localhost:6379/2"
 
+    model_config = SettingsConfigDict(env_file= ".env", env_file_encoding= "utf-8")
+
 settings = Settings()
